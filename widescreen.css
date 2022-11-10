@@ -52,6 +52,15 @@ header a {
   display: flex;
   color: white;
   text-decoration: none;
+  animation: 2s ease-out slideInFromRight;
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 nav {
@@ -111,10 +120,13 @@ main .vis button {
   font-weight: bold;
   margin: 0.5em;
   padding: 0.5em;
+  transition-duration: 0.8s;
+  transition-property: transform;
 }
 main .vis button:hover {
   cursor: pointer;
   background-color: #5151b1;
+  transform: rotate(360deg);
 }
 main .vis .pic {
   height: calc(100vh - 200px);
@@ -149,11 +161,14 @@ footer a {
   font-weight: bold;
   margin: 0.5em;
   padding: 0.5em;
+  transition-duration: 0.8s;
+  transition-property: transform;
   font-size: larger;
 }
 .button:hover {
   cursor: pointer;
   background-color: #5151b1;
+  transform: rotate(360deg);
 }
 
 fieldset {
