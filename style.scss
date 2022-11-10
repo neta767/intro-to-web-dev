@@ -20,7 +20,7 @@ html {
 body {
   margin: 0px;
   display: grid;
-  grid-template-columns:1fr 6fr;
+  //grid-template-columns:1fr 3.5fr;
   //grid-gap: 10px;
   grid-template-areas:"header header"
                       "nav main"
@@ -105,12 +105,37 @@ nav {
 
 main {
   grid-area: main;
+  left: 160px;
 
-  div {
+  .min-page {
     padding-top: 86px;
+    padding-left: 160px;
     height: 100%;
     position: relative;
+
   }
+
+  .grid {
+    display: grid;
+    grid-template-areas:"data pic"
+  }
+
+  .data {
+    grid-area: data;
+    margin: 0.5em;
+
+  }
+
+  .vis {
+    grid-area: pic;
+    margin: 0.5em;
+
+    .pic {
+      height: 400px;
+      overflow: scroll;
+    }
+  }
+
 }
 
 footer {
@@ -129,15 +154,9 @@ footer {
 
 @media (max-width: 500px) {
   body {
-    color: red;
+
   }
 }
-
-//@media (max-width: 500px) {
-//  body {
-//    color: black;
-//  }
-//}
 
 .schools-pic {
   height: 30px;
@@ -153,12 +172,6 @@ table {
 
 td, th {
   border: 1px solid black;
-}
-
-
-main {
-  padding-left: 20px;
-  padding-right: 20px
 }
 
 #ziv {
@@ -178,7 +191,7 @@ main {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 300px;
+  height: 150px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
 }
 
