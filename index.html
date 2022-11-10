@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neta Kleman</title>
-    <link href="img/blue-flower.ico" rel="icon"
-          type="image/x-icon">
-    <link href="style.css" rel="stylesheet">
+    <link href="img/blue-flower.ico" rel="icon" type="image/x-icon">
+    <link media="screen and (min-width: 900px)" href="widescreen.css" rel="stylesheet">
+    <link media="screen and (max-width: 600px)" href="smallscreen.css" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -29,7 +29,9 @@
         </div>
         <div class="vis">
             <img class="home-pic" src="https://upload.wikimedia.org/wikipedia/en/0/05/Up_%282009_film%29.jpg">
-            <a href="https://www.imdb.com/title/tt1049413/" target="_blank">Visit UP in IMDb</a>
+            <button onclick="window.open('https://www.imdb.com/title/tt1049413/')"
+            >Visit UP in IMDb
+            </button>
         </div>
     </div>
 
@@ -59,8 +61,9 @@
                 <img class="home-pic" src="img/valle_de_la_Luna4.jfif">
                 <img class="home-pic" src="img/valle_de_la_Luna5.jfif">
             </div>
-            <a href="https://www.google.com/maps/place/Valle+de+la+Luna/@-16.5673643,-68.0939081,15z/data=!4m5!3m4!1s0x0:0xe5ce84af268e7da5!8m2!3d-16.5673643!4d-68.0939081?hl=en-GB"
-               target="_blank">Visit Valle de la Luna in google map</a>
+            <button onclick="window.open('https://www.google.com/maps/place/Valle+de+la+Luna/@-16.5673643,-68.0939081,15z/data=!4m5!3m4!1s0x0:0xe5ce84af268e7da5!8m2!3d-16.5673643!4d-68.0939081?hl=en-GB')"
+            >Visit Valle de la Luna<br> in google map
+            </button>
         </div>
     </div>
 
@@ -78,48 +81,65 @@
         <form>
             <fieldset>
                 <legend><h3>Personal Details</h3></legend>
-                <label for="name">Full name:</label>
-                <input type="text" id="name">
-                <label for="email">Email:</label>
-                <input type="email" id="email">
-                <label for="phone">Phone number:</label>
-                <input type="number" id="phone">
-                <label for="birth">Date of birth:</label>
-                <input type="date" id="birth">
+                <div>
+                    <div>
+                        <label for="name">Full name:</label>
+                        <input type="text" pattern="[a-zA-Z]{2,32}" id="name">
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="phone">Phone number:</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    <div>
+                        <label for="birth">Date of birth:</label>
+                        <input type="date" id="birth" value="2000-01-01" min="1900-01-01" max="2050-01-01"/>
+                    </div>
+                </div>
             </fieldset>
 
 
             <fieldset>
+
                 <legend><h3>Your Feedback:</h3></legend>
-
-                <!--                <div>-->
-                <label>Rating:</label>
-                <input type="radio" id="1" name="rating">
-                <label for="1">1</label>
-                <input type="radio" id="2" name="rating">
-                <label for="2">2</label>
-                <input type="radio" id="3" name="rating">
-                <label for="3">3</label>
-                <input type="radio" id="4" name="rating">
-                <label for="4">4</label>
-                <input type="radio" id="5" name="rating">
-                <label for="5">5</label>
-
-                <label for="source">How did you find this website?</label>
-                <select name="source" id="source">
-                    <option value="GitHub">GitHub</option>
-                    <option value="LinkedIn">LinkedIn</option>
-                    <option value="WebDev">WebDev</option>
-                    <option value="Google">Google</option>
-                    <option value="Other">Other</option>
-                </select>
-
-                <label for="message">Your message:</label>
-                <input type="text" id="message">
+                <div>
+                    <div>
+                        <label>Rating:</label>
+                        <input type="radio" id="1" name="rating">
+                        <label for="1">1</label>
+                        <input type="radio" id="2" name="rating">
+                        <label for="2">2</label>
+                        <input type="radio" id="3" name="rating">
+                        <label for="3">3</label>
+                        <input type="radio" id="4" name="rating">
+                        <label for="4">4</label>
+                        <input type="radio" id="5" name="rating">
+                        <label for="5">5</label>
+                    </div>
+                    <div>
+                        <label for="source">How did you find this website?</label>
+                        <select name="source" id="source">
+                            <option value="GitHub">GitHub</option>
+                            <option value="LinkedIn">LinkedIn</option>
+                            <option value="WebDev">WebDev</option>
+                            <option value="Google">Google</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label for="message">Your message:</label>
+                    <textarea id="message"></textarea>
+                </div>
 
             </fieldset>
-            <input type="submit" value="Submit">
-            <input type="button" value="Reset">
+            <input type="submit" value="Submit" class="button">
+            <input type="reset" value="Reset" class="button">
         </form>
     </div>
 </main>
@@ -140,7 +160,7 @@
     <a href="#valle_de_la_Luna">Favorite Place</a>
     <a href="#favorite_food">Favorite food</a>
     <a href="#feedback">Feedback</a>
-    <a href="schools.html" TARGET="_blank">Schools</a>
+    <a href="schools.html" target="_blank">Schools</a>
     <a href="https://github.com/neta767/intro-to-web-dev" target="_blank">On GitHub</a>
 </nav>
 <footer>

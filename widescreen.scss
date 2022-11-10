@@ -33,6 +33,28 @@ body {
   width: 100%;
 }
 
+@mixin button-class {
+  background-color: $secondary-bg-color;
+  text-decoration: none;
+  color: $header-color;
+  border-radius: 1em;
+  font-weight: bold;
+  margin: 0.5em;
+  padding: 0.5em;
+  &:hover {
+    cursor: pointer;
+    background-color: #5151b1;
+  }
+}
+
+@mixin form-class {
+  border-radius: 4px;
+  border: 2px solid $secondary-bg-color;
+  &:focus {
+    background-color: lightblue;
+  }
+}
+
 header {
   height: 86px;
   @include theme;
@@ -109,10 +131,9 @@ main {
 
   .min-page {
     padding-top: 86px;
-    padding-left: 160px;
+    padding-left: 175px;
     height: 100%;
     position: relative;
-
   }
 
   .grid {
@@ -122,21 +143,38 @@ main {
 
   .data {
     grid-area: data;
-    margin: 0.5em;
-
+    margin-right: 0.5em;
   }
 
   .vis {
     grid-area: pic;
-    margin: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+      width: 200px;
+      @include button-class;
+    }
 
     .pic {
-      height: 400px;
-      overflow: scroll;
+      height: calc(100vh - 200px);
+      width: 250px;
+      overflow-y: scroll;
+
+      img {
+        padding: 0.1em;
+        width: 230px;
+        display: block;
+      }
+
+      //:hover {
+      //  transform: scale(1.5);
+      //}
     }
   }
-
 }
+
 
 footer {
   //grid-area: footer;
@@ -152,10 +190,26 @@ footer {
   }
 }
 
-@media (max-width: 500px) {
-  body {
+.button {
+  @include button-class;
+  font-size: larger;
+}
 
-  }
+fieldset {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+input {
+  @include form-class;
+}
+
+select {
+  @include form-class;
+}
+
+textarea {
+  @include form-class;
 }
 
 .schools-pic {
@@ -174,26 +228,26 @@ td, th {
   border: 1px solid black;
 }
 
-#ziv {
+.ziv {
   background-color: greenyellow;
 }
 
-#hasharon {
+.hasharon {
   background-color: deepskyblue;
 }
 
-#amiasaf {
+.amiasaf {
   background-color: lightpink;
 }
 
 
-.home-pic {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 150px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
-}
+//.home-pic {
+//  display: block;
+//  margin-left: auto;
+//  margin-right: auto;
+//  height: 150px;
+//  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+//}
 
 h2 {
   font-family: fantasy;

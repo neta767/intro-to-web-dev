@@ -84,7 +84,7 @@ main {
 }
 main .min-page {
   padding-top: 86px;
-  padding-left: 160px;
+  padding-left: 175px;
   height: 100%;
   position: relative;
 }
@@ -94,15 +94,37 @@ main .grid {
 }
 main .data {
   grid-area: data;
-  margin: 0.5em;
+  margin-right: 0.5em;
 }
 main .vis {
   grid-area: pic;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .vis button {
+  width: 200px;
+  background-color: darkblue;
+  text-decoration: none;
+  color: white;
+  border-radius: 1em;
+  font-weight: bold;
   margin: 0.5em;
+  padding: 0.5em;
+}
+main .vis button:hover {
+  cursor: pointer;
+  background-color: #5151b1;
 }
 main .vis .pic {
-  height: 400px;
-  overflow: scroll;
+  height: calc(100vh - 200px);
+  width: 250px;
+  overflow-y: scroll;
+}
+main .vis .pic img {
+  padding: 0.1em;
+  width: 230px;
+  display: block;
 }
 
 footer {
@@ -117,6 +139,50 @@ footer {
 footer a {
   color: black;
   text-decoration: none;
+}
+
+.button {
+  background-color: darkblue;
+  text-decoration: none;
+  color: white;
+  border-radius: 1em;
+  font-weight: bold;
+  margin: 0.5em;
+  padding: 0.5em;
+  font-size: larger;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: #5151b1;
+}
+
+fieldset {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+input {
+  border-radius: 4px;
+  border: 2px solid darkblue;
+}
+input:focus {
+  background-color: lightblue;
+}
+
+select {
+  border-radius: 4px;
+  border: 2px solid darkblue;
+}
+select:focus {
+  background-color: lightblue;
+}
+
+textarea {
+  border-radius: 4px;
+  border: 2px solid darkblue;
+}
+textarea:focus {
+  background-color: lightblue;
 }
 
 .schools-pic {
@@ -135,24 +201,16 @@ td, th {
   border: 1px solid black;
 }
 
-#ziv {
+.ziv {
   background-color: greenyellow;
 }
 
-#hasharon {
+.hasharon {
   background-color: deepskyblue;
 }
 
-#amiasaf {
+.amiasaf {
   background-color: lightpink;
-}
-
-.home-pic {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 150px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
 }
 
 h2 {
@@ -161,4 +219,4 @@ h2 {
   text-shadow: 0 0 3px darkblue;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=widescreen.css.map */
