@@ -1,9 +1,204 @@
+* {
+  font-family: Arial;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+html {
+  /*min-width: 1024px;*/
+}
+
+body {
+  width: 100%;
+  margin: 0px;
+  display: grid;
+  grid-template-areas: "header" "nav" "main" "footer";
+}
+
 header {
-  position: static;
+  height: 86px;
+  background-image: linear-gradient(135deg, darkblue, lightgreen, white);
+  width: 100%;
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+}
+header h1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+header .shadow:hover {
+  background-color: #5151b1;
+}
+header img {
+  height: 70px;
+  padding: 0.5em;
+}
+header div {
+  display: flex;
+  align-items: center;
+}
+header .theme {
+  height: 2em;
+}
+header .theme:hover {
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 50%;
+}
+header a {
+  display: flex;
+  color: white;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  grid-area: nav;
+  background-color: darkblue;
+}
+nav a {
+  min-width: 9rem;
+  padding: 0.5rem;
+  border-top: solid 1px #aaa;
+  text-decoration: none;
+  color: white;
+}
+nav :nth-last-child(odd) {
+  background-color: #000051;
+}
+nav :hover {
+  background-color: #5151b1;
+}
+
+main {
+  grid-area: main;
+  padding: 0.5em;
+}
+main .vis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .vis button {
+  width: 200px;
+  background-color: darkblue;
+  text-decoration: none;
+  color: white;
+  border-radius: 1em;
+  font-weight: bold;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+main .vis button:hover {
+  cursor: pointer;
+  background-color: #5151b1;
+}
+main .vis .pic {
+  height: calc(50vh - 200px);
+  width: 250px;
+  overflow-y: scroll;
+}
+main .vis .pic img {
+  padding: 0.1em;
+  width: 230px;
+  display: block;
 }
 
 footer {
-  position: static;
+  grid-area: footer;
+  height: 40px;
+  text-align: center;
+  bottom: 0;
+  background-image: linear-gradient(135deg, darkblue, lightgreen, white);
+  width: 100%;
+  font-weight: bold;
+}
+footer a {
+  color: black;
+  text-decoration: none;
+}
+
+.button {
+  background-color: darkblue;
+  text-decoration: none;
+  color: white;
+  border-radius: 1em;
+  font-weight: bold;
+  margin: 0.5em;
+  padding: 0.5em;
+  font-size: larger;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: #5151b1;
+}
+
+fieldset {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+input {
+  border-radius: 4px;
+  border: 2px solid darkblue;
+}
+input:focus {
+  background-color: lightblue;
+}
+
+select {
+  border-radius: 4px;
+  border: 2px solid darkblue;
+}
+select:focus {
+  background-color: lightblue;
+}
+
+textarea {
+  border-radius: 4px;
+  border: 2px solid darkblue;
+}
+textarea:focus {
+  background-color: lightblue;
+}
+
+.schools-pic {
+  height: 30px;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  border: 1px solid black;
+  background-color: white;
+  direction: rtl;
+}
+
+td, th {
+  border: 1px solid black;
+}
+
+.ziv {
+  background-color: greenyellow;
+}
+
+.hasharon {
+  background-color: deepskyblue;
+}
+
+.amiasaf {
+  background-color: lightpink;
+}
+
+h2 {
+  font-family: fantasy;
+  font-weight: lighter;
+  text-shadow: 0 0 3px darkblue;
 }
 
 /*# sourceMappingURL=smallscreen.css.map */
