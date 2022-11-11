@@ -105,6 +105,11 @@ main .data {
   grid-area: data;
   margin-right: 0.5em;
 }
+main .data .fullpic {
+  float: left;
+  width: 50vw;
+  position: absolute;
+}
 main .vis {
   grid-area: pic;
   display: flex;
@@ -137,6 +142,37 @@ main .vis .pic img {
   padding: 0.1em;
   width: 230px;
   display: block;
+}
+main .vis .gallerycontainer {
+  position: relative;
+  height: calc(100vh - 200px);
+  overflow-y: scroll;
+  width: 250px;
+}
+main .vis .gallerycontainer img {
+  width: 230px;
+}
+main .vis .thumbnail span { /*CSS for enlarged image*/
+  visibility: hidden;
+  z-index: 90;
+  top: 10%;
+  right: 230px; /*position where enlarged image should offset horizontally */
+}
+main .vis .thumbnail:hover span { /*CSS for enlarged image*/
+  visibility: visible;
+  top: 10%;
+  right: 230px; /*position where enlarged image should offset horizontally */
+}
+main .vis .thumbnail:hover span img {
+  width: 30vw;
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 footer {
