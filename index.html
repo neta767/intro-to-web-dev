@@ -78,7 +78,7 @@
 
     <div id="feedback" class="min-page">
         <h2>FeedBack Form</h2>
-        <form action="http://localhost:8080" method="post">
+        <form method="get">
             <fieldset>
                 <legend><h3>Personal Details</h3></legend>
                 <div>
@@ -108,22 +108,33 @@
 
                 <legend><h3>Your Feedback:</h3></legend>
                 <div>
-                    <div>
-                        <label>Rating:</label>
-                        <input type="radio" id="1" name="rating">
-                        <label for="1">1</label>
-                        <input type="radio" id="2" name="rating">
-                        <label for="2">2</label>
-                        <input type="radio" id="3" name="rating">
-                        <label for="3">3</label>
-                        <input type="radio" id="4" name="rating">
-                        <label for="4">4</label>
-                        <input type="radio" id="5" name="rating">
-                        <label for="5">5</label>
+                    <label>Rating:</label>
+                    <div class="rating">
+                        <div>
+                            <input type="radio" id="1" name="rating">
+                            <label for="1">1</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="2" name="rating">
+                            <label for="2">2</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="3" name="rating">
+                            <label for="3">3</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="4" name="rating">
+                            <label for="4">4</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="5" name="rating">
+                            <label for="5">5</label>
+                        </div>
                     </div>
                     <div>
                         <label for="source">How did you find this website?</label>
                         <select name="source" id="source">
+                            <option value="0">Select:</option>
                             <option value="GitHub">GitHub</option>
                             <option value="LinkedIn">LinkedIn</option>
                             <option value="WebDev">WebDev</option>
@@ -145,7 +156,7 @@
 </main>
 <header>
     <div>
-        <a href="#main" class='shadow'>
+        <a href="#main">
             <img src="img/blue-flower.png">
             <h1>WebDev Bootcamp</h1>
         </a>

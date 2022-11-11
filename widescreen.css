@@ -1,20 +1,22 @@
-* {
-  font-family: Arial;
-}
-
 .dark-mode {
   background-color: black;
   color: white;
 }
 
-html {
-  /*min-width: 1024px;*/
+* {
+  font-family: Arial;
 }
 
 body {
   margin: 0px;
   display: grid;
   grid-template-areas: "header header" "nav main" "footer footer";
+}
+
+h2 {
+  font-family: fantasy;
+  font-weight: lighter;
+  text-shadow: 0 0 3px darkblue;
 }
 
 header {
@@ -28,9 +30,6 @@ header {
 }
 header h1 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-header .shadow:hover {
-  background-color: #5151b1;
 }
 header img {
   height: 70px;
@@ -53,6 +52,9 @@ header a {
   color: white;
   text-decoration: none;
   animation: 2s ease-out slideInFromRight;
+}
+header a:hover {
+  background-color: #5151b1;
 }
 @keyframes slideInFromRight {
   0% {
@@ -166,14 +168,6 @@ main .vis .thumbnail:hover span { /*CSS for enlarged image*/
 main .vis .thumbnail:hover span img {
   width: 30vw;
 }
-@keyframes slideInFromRight {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
 
 footer {
   height: 40px;
@@ -210,30 +204,37 @@ footer a {
 fieldset {
   display: grid;
   grid-template-columns: auto auto;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
 }
 
-input {
+input:not(.button), select, textarea {
+  width: calc(100% - 20px);
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  border: 2px solid darkblue;
+  box-sizing: border-box;
 }
-input:focus {
-  background-color: lightblue;
-}
-
-select {
-  border-radius: 4px;
-  border: 2px solid darkblue;
-}
-select:focus {
+input:not(.button):focus, select:focus, textarea:focus {
   background-color: lightblue;
 }
 
 textarea {
-  border-radius: 4px;
-  border: 2px solid darkblue;
+  height: calc(100% - 33px);
 }
-textarea:focus {
-  background-color: lightblue;
+
+.rating {
+  width: 40%;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+}
+.rating div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .schools-pic {
@@ -262,12 +263,6 @@ td, th {
 
 .amiasaf {
   background-color: lightpink;
-}
-
-h2 {
-  font-family: fantasy;
-  font-weight: lighter;
-  text-shadow: 0 0 3px darkblue;
 }
 
 /*# sourceMappingURL=widescreen.css.map */

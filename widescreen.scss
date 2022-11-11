@@ -1,32 +1,5 @@
 @import "colors";
 
-* {
-  font-family: Arial;
-}
-
-.dark-mode {
-  background-color: black;
-  color: white;
-}
-
-html {
-  //background: linear-gradient(135deg, white, lightgreen, darkblue);
-  //min-height: 100%;
-  /*min-width: 1024px;*/
-  //width: 100%;
-  //height: auto;
-}
-
-body {
-  margin: 0px;
-  display: grid;
-  //grid-template-columns:1fr 3.5fr;
-  //grid-gap: 10px;
-  grid-template-areas:"header header"
-                      "nav main"
-                      "footer footer";
-}
-
 @mixin theme {
   background-image: $primary-bg-color;
   position: fixed;
@@ -44,20 +17,33 @@ body {
   transition-duration: 0.8s;
   transition-property: transform;
   &:hover {
-    //animation: rotate 2s ease;
     cursor: pointer;
     background-color: #5151b1;
     transform: rotate(360deg);
   }
 }
 
+.dark-mode {
+  background-color: black;
+  color: white;
+}
 
-@mixin form-class {
-  border-radius: 4px;
-  border: 2px solid $secondary-bg-color;
-  &:focus {
-    background-color: lightblue;
-  }
+* {
+  font-family: Arial;
+}
+
+body {
+  margin: 0px;
+  display: grid;
+  grid-template-areas:"header header"
+                      "nav main"
+                      "footer footer";
+}
+
+h2 {
+  font-family: fantasy;
+  font-weight: lighter;
+  text-shadow: 0 0 3px darkblue;
 }
 
 header {
@@ -69,10 +55,6 @@ header {
 
   h1 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-
-  .shadow:hover {
-    background-color: #5151b1;
   }
 
   img {
@@ -87,12 +69,12 @@ header {
 
   .theme {
     height: 2em;
-  }
 
-  .theme:hover {
-    cursor: pointer;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 50%;
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 50%;
+    }
   }
 
   a {
@@ -100,6 +82,10 @@ header {
     color: $header-color;
     text-decoration: none;
     animation: 2s ease-out slideInFromRight;
+
+    &:hover {
+      background-color: #5151b1;
+    }
   }
 
   @keyframes slideInFromRight {
@@ -218,15 +204,6 @@ main {
         width: 30vw;
       }
     }
-
-    @keyframes slideInFromRight {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(0);
-      }
-    }
   }
 }
 
@@ -252,18 +229,41 @@ footer {
 fieldset {
   display: grid;
   grid-template-columns: auto auto;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  //padding: 20px;
 }
 
-input {
-  @include form-class;
-}
 
-select {
-  @include form-class;
+input:not(.button), select, textarea {
+  width: calc(100% - 20px);
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  &:focus {
+    background-color: lightblue;
+  }
 }
 
 textarea {
-  @include form-class;
+  height: calc(100% - 33px);
+}
+
+.rating {
+  width: 40%;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .schools-pic {
@@ -295,17 +295,5 @@ td, th {
 }
 
 
-.home-pic {
-  //  display: block;
-  //  margin-left: auto;
-  //  margin-right: auto;
-  //  height: 150px;
-  //  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
 
-}
 
-h2 {
-  font-family: fantasy;
-  font-weight: lighter;
-  text-shadow: 0 0 3px darkblue;
-}
