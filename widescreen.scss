@@ -1,5 +1,11 @@
 @import "colors";
 
+@media screen and (max-width: 600px) {
+  * {
+    background-color: red;
+  }
+}
+
 @mixin theme {
   background-image: $primary-bg-color;
   position: fixed;
@@ -26,14 +32,22 @@
 .dark-mode {
   background-color: black;
   color: white;
+
+  footer, table {
+    color: black;
+  }
+
+  fieldset {
+    background-color: #555555;
+  }
 }
 
 * {
-  font-family: Arial;
+  font-family: Verdana, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
 body {
-  margin: 0px;
+  margin: 0;
   display: grid;
   grid-template-areas:"header header"
                       "nav main"
@@ -133,7 +147,7 @@ main {
   .min-page {
     padding-top: 86px;
     padding-left: 175px;
-    height: 100%;
+    height: calc(100vh + 40px);
     position: relative;
   }
 
@@ -148,8 +162,9 @@ main {
 
     .fullpic {
       float: left;
-      width: 50vw;
+      width: 80vh;
       position: absolute;
+      z-index: 9;
     }
   }
 
@@ -175,40 +190,10 @@ main {
         display: block;
       }
     }
-
-    .gallerycontainer {
-      position: relative;
-      height: calc(100vh - 200px);
-      overflow-y: scroll;
-      width: 250px;
-
-      img {
-        width: 230px;
-      }
-    }
-
-    .thumbnail span { /*CSS for enlarged image*/
-      //position: absolute;
-      visibility: hidden;
-      z-index: 90;
-      top: 10%;
-      right: 230px; /*position where enlarged image should offset horizontally */
-    }
-
-    .thumbnail:hover span { /*CSS for enlarged image*/
-      visibility: visible;
-      top: 10%;
-      right: 230px; /*position where enlarged image should offset horizontally */
-
-      img {
-        width: 30vw;
-      }
-    }
   }
 }
 
 footer {
-  //grid-area: footer;
   height: 40px;
   text-align: center;
   bottom: 0;
@@ -232,9 +217,7 @@ fieldset {
   border: none;
   border-radius: 5px;
   background-color: #f2f2f2;
-  //padding: 20px;
 }
-
 
 input:not(.button), select, textarea {
   width: calc(100% - 20px);

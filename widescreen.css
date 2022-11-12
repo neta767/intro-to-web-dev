@@ -1,14 +1,25 @@
+@media screen and (max-width: 600px) {
+  * {
+    background-color: red;
+  }
+}
 .dark-mode {
   background-color: black;
   color: white;
 }
+.dark-mode footer, .dark-mode table {
+  color: black;
+}
+.dark-mode fieldset {
+  background-color: #555555;
+}
 
 * {
-  font-family: Arial;
+  font-family: Verdana, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
 body {
-  margin: 0px;
+  margin: 0;
   display: grid;
   grid-template-areas: "header header" "nav main" "footer footer";
 }
@@ -96,7 +107,7 @@ main {
 main .min-page {
   padding-top: 86px;
   padding-left: 175px;
-  height: 100%;
+  height: calc(100vh + 40px);
   position: relative;
 }
 main .grid {
@@ -109,8 +120,9 @@ main .data {
 }
 main .data .fullpic {
   float: left;
-  width: 50vw;
+  width: 80vh;
   position: absolute;
+  z-index: 9;
 }
 main .vis {
   grid-area: pic;
@@ -144,29 +156,6 @@ main .vis .pic img {
   padding: 0.1em;
   width: 230px;
   display: block;
-}
-main .vis .gallerycontainer {
-  position: relative;
-  height: calc(100vh - 200px);
-  overflow-y: scroll;
-  width: 250px;
-}
-main .vis .gallerycontainer img {
-  width: 230px;
-}
-main .vis .thumbnail span { /*CSS for enlarged image*/
-  visibility: hidden;
-  z-index: 90;
-  top: 10%;
-  right: 230px; /*position where enlarged image should offset horizontally */
-}
-main .vis .thumbnail:hover span { /*CSS for enlarged image*/
-  visibility: visible;
-  top: 10%;
-  right: 230px; /*position where enlarged image should offset horizontally */
-}
-main .vis .thumbnail:hover span img {
-  width: 30vw;
 }
 
 footer {

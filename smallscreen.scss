@@ -1,35 +1,7 @@
 @import "colors";
 
-* {
-  font-family: Arial;
-}
-
-.dark-mode {
-  background-color: black;
-  color: white;
-}
-
-html {
-  //background: linear-gradient(135deg, white, lightgreen, darkblue);
-  //min-height: 100%;
-  /*min-width: 1024px;*/
-  //width: 100%;
-  //height: auto;
-}
-
-body {
-  width: 100%;
-  margin: 0px;
-  display: grid;
-  grid-template-areas:"header"
-                      "nav"
-                      "main"
-                      "footer";
-}
-
 @mixin theme {
   background-image: $primary-bg-color;
-  //position: fixed;
   width: 100%;
 }
 
@@ -41,19 +13,42 @@ body {
   font-weight: bold;
   margin: 0.5em;
   padding: 0.5em;
+  transition-duration: 0.8s;
+  transition-property: transform;
   &:hover {
     cursor: pointer;
     background-color: #5151b1;
+    transform: rotate(360deg);
   }
 }
 
-@mixin form-class {
-  border-radius: 4px;
-  border: 2px solid $secondary-bg-color;
-  &:focus {
-    background-color: lightblue;
+.dark-mode {
+  background-color: black;
+  color: white;
+
+  footer, table {
+    color: black;
+  }
+
+  fieldset {
+    background-color: #555555;
   }
 }
+
+* {
+  font-family: Verdana, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-areas:"header"
+                      "nav"
+                      "main"
+                      "footer";
+}
+
 
 header {
   height: 86px;
@@ -64,10 +59,6 @@ header {
 
   h1 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-
-  .shadow:hover {
-    background-color: #5151b1;
   }
 
   img {
@@ -82,18 +73,32 @@ header {
 
   .theme {
     height: 2em;
-  }
 
-  .theme:hover {
-    cursor: pointer;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 50%;
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 50%;
+    }
   }
 
   a {
     display: flex;
     color: $header-color;
     text-decoration: none;
+    animation: 2s ease-out slideInFromRight;
+
+    &:hover {
+      background-color: #5151b1;
+    }
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
   }
 }
 
@@ -119,7 +124,6 @@ nav {
   :hover {
     background-color: #5151b1;
   }
-
 }
 
 main {
@@ -146,10 +150,6 @@ main {
         width: 230px;
         display: block;
       }
-
-      //:hover {
-      //  transform: scale(1.5);
-      //}
     }
   }
 }
@@ -177,18 +177,39 @@ footer {
 fieldset {
   display: grid;
   grid-template-columns: auto auto;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
 }
 
-input {
-  @include form-class;
-}
+input:not(.button), select, textarea {
+  width: calc(100% - 20px);
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 
-select {
-  @include form-class;
+  &:focus {
+    background-color: lightblue;
+  }
 }
 
 textarea {
-  @include form-class;
+  height: calc(100% - 33px);
+}
+
+.rating {
+  width: 40%;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .schools-pic {
