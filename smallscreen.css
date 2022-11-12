@@ -90,6 +90,9 @@ main {
   grid-area: main;
   padding: 0.5em;
 }
+main .fullpic {
+  height: 0;
+}
 main .vis {
   display: flex;
   flex-direction: column;
@@ -113,13 +116,13 @@ main .vis button:hover {
   transform: rotate(360deg);
 }
 main .vis .pic {
-  height: calc(50vh - 200px);
-  width: 250px;
+  height: calc(80vh - 5px);
+  width: 80vw;
   overflow-y: scroll;
 }
 main .vis .pic img {
   padding: 0.1em;
-  width: 230px;
+  width: calc(80vw - 20px);
   display: block;
 }
 
@@ -181,7 +184,7 @@ textarea {
 }
 
 .rating {
-  width: 40%;
+  width: 80%;
   display: grid;
   grid-template-columns: auto auto auto auto auto;
 }

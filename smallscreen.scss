@@ -130,6 +130,10 @@ main {
   grid-area: main;
   padding: 0.5em;
 
+  .fullpic {
+    height: 0;
+  }
+
   .vis {
     display: flex;
     flex-direction: column;
@@ -141,13 +145,13 @@ main {
     }
 
     .pic {
-      height: calc(50vh - 200px);
-      width: 250px;
+      height: calc(80vh - 5px);
+      width: 80vw;
       overflow-y: scroll;
 
       img {
         padding: 0.1em;
-        width: 230px;
+        width: calc(80vw - 20px);
         display: block;
       }
     }
@@ -201,7 +205,7 @@ textarea {
 }
 
 .rating {
-  width: 40%;
+  width: 80%;
   display: grid;
   grid-template-columns: auto auto auto auto auto;
 
@@ -239,15 +243,6 @@ td, th {
 .amiasaf {
   background-color: lightpink;
 }
-
-
-//.home-pic {
-//  display: block;
-//  margin-left: auto;
-//  margin-right: auto;
-//  height: 150px;
-//  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
-//}
 
 h2 {
   font-family: fantasy;
