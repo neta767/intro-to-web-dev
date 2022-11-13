@@ -2,51 +2,181 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neta Kleman</title>
-    <link href="https://iconarchive.com/download/i103416/paomedia/small-n-flat/flower.ico" rel="icon"
-          type="image/x-icon">
-    <link href="style.css" rel="stylesheet">
+    <link href="img/blue-flower.ico" rel="icon" type="image/x-icon">
+    <link media="screen and (min-width: 600px)" href="widescreen.css" rel="stylesheet">
+    <link media="screen and (max-width: 600px)" href="smallscreen.css" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
+<main>
+    <div id="main" class="min-page">
+        <h2>Hello!</h2>
+    </div>
+
+    <div id="UP" class="min-page grid">
+        <div class="data">
+            <h2>Favorite Movie-UP</h2>
+            <h3>Description-</h3>
+            <p>78-year-old Carl Fredricksen travels to Paradise Falls in his house equipped with balloons, inadvertently
+                taking
+                a young stowaway.</p>
+            <h3>Why I like UP?</h3>
+            <p>It's an emotionally intense story about life, love, commitment, hope, happiness, loss and sadness.</p>
+            <h3>Quote-</h3>
+            <p>“Squirrel!” — Dug</p>
+        </div>
+        <div class="vis">
+            <img class="home-pic" src="https://upload.wikimedia.org/wikipedia/en/0/05/Up_%282009_film%29.jpg">
+            <button onclick="window.open('https://www.imdb.com/title/tt1049413/')"
+            >Visit UP in IMDb
+            </button>
+        </div>
+    </div>
+
+    <div id="valle_de_la_Luna" class="min-page grid">
+        <div class="data">
+            <img id="largeImg" class="fullpic" src=""/>
+            <h2>Favorite Place-Valle de la Luna</h2>
+            <h3>Description-</h3>
+            <p>Valle de la Luna, also calling Killa Qhichwa (Moon Valley) is situated about 10 kilometers from downtown
+                La Paz, in the Pedro Domingo Murillo Province, La Paz Department, Bolivia. It consists of an area where
+                erosion has worn away the majority of a mountain, composed primarily of clay rather than rock, leaving
+                tall spires. It is similar to another zone of La Paz that is known as El Valle de las Animas (The Valley
+                of the Souls). It is an important site of the famous holiday, Dias de los Muertos (Day of the Dead).</p>
+            <h3>Why I like Valle de la Luna?</h3>
+            <p>Its wild.The jagged hills look like they belong in a space movie </p>
+        </div>
+        <div class="vis">
+            <div class="pic">
+                <img onmouseover="bigImg(this)" onmouseout="normalImg()" class="home-pic"
+                     src="img/valle_de_la_Luna1.jpg">
+                <img onmouseover="bigImg(this)" onmouseout="normalImg()" class="home-pic"
+                     src="img/valle_de_la_Luna2.jfif">
+                <img onmouseover="bigImg(this)" onmouseout="normalImg()" class="home-pic"
+                     src="img/valle_de_la_Luna3.jfif">
+                <img onmouseover="bigImg(this)" onmouseout="normalImg()" class="home-pic"
+                     src="img/valle_de_la_Luna4.jfif">
+                <img onmouseover="bigImg(this)" onmouseout="normalImg()" class="home-pic"
+                     src="img/valle_de_la_Luna5.jfif">
+            </div>
+            <button onclick="window.open('https://www.google.com/maps/place/Valle+de+la+Luna/@-16.5673643,-68.0939081,15z/data=!4m5!3m4!1s0x0:0xe5ce84af268e7da5!8m2!3d-16.5673643!4d-68.0939081?hl=en-GB')"
+            >Visit Valle de la Luna<br> in google map
+            </button>
+        </div>
+    </div>
+
+    <div id="favorite_food" class="min-page">
+        <h2>Favorite Food</h2>
+        <ul>
+            <li>Hummus</li>
+            <li>Ice cream</li>
+            <li>Chocolate</li>
+        </ul>
+    </div>
+
+    <div id="feedback" class="min-page">
+        <h2>FeedBack Form</h2>
+        <form method="get">
+            <fieldset>
+                <legend><h3>Personal Details</h3></legend>
+                <div>
+                    <div>
+                        <label for="name">Full name:</label>
+                        <input type="text" pattern="[a-zA-Z]{2,32}" id="name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="phone">Phone number:</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    <div>
+                        <label for="birth">Date of birth:</label>
+                        <input type="date" id="birth" value="2000-01-01" min="1900-01-01" max="2050-01-01"/>
+                    </div>
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+
+                <legend><h3>Your Feedback:</h3></legend>
+                <div>
+                    <label>Rating:</label>
+                    <div class="rating">
+                        <div>
+                            <input type="radio" id="1" name="rating">
+                            <label for="1">1</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="2" name="rating">
+                            <label for="2">2</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="3" name="rating">
+                            <label for="3">3</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="4" name="rating">
+                            <label for="4">4</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="5" name="rating">
+                            <label for="5">5</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="source">How did you find this website?</label>
+                        <select name="source" id="source">
+                            <option value="0">Select:</option>
+                            <option value="GitHub">GitHub</option>
+                            <option value="LinkedIn">LinkedIn</option>
+                            <option value="WebDev">WebDev</option>
+                            <option value="Google">Google</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label for="message">Your message:</label>
+                    <textarea id="message"></textarea>
+                </div>
+
+            </fieldset>
+            <input type="submit" value="Submit" class="button">
+            <input type="reset" value="Reset" class="button">
+        </form>
+    </div>
+</main>
+<header>
+    <div>
+        <a href="#main">
+            <img src="img/blue-flower.png">
+            <h1>WebDev Bootcamp</h1>
+        </a>
+    </div>
+    <div>
+        <img class="theme" src="img/theme.svg" onclick="changeTheme()">
+        <img src="img/login.png">
+    </div>
+</header>
 <nav>
     <a href="#UP">Favorite Movie</a>
     <a href="#valle_de_la_Luna">Favorite Place</a>
     <a href="#favorite_food">Favorite food</a>
-    <a class="schools-a" href="schools.html">Schools</a>
+    <a href="#feedback">Feedback</a>
+    <a href="schools.html" target="_blank">Schools</a>
+    <a href="https://github.com/neta767/intro-to-web-dev" target="_blank">On GitHub</a>
 </nav>
-<main>
-    <h2 id="UP">Favorite Movie-UP</h2>
-    <a href="https://www.imdb.com/title/tt1049413/" target="_blank">Visit UP in IMDb</a>
-    <img class="home-pic" src="https://upload.wikimedia.org/wikipedia/en/0/05/Up_%282009_film%29.jpg">
-    <h3>Description-</h3>
-    <p>78-year-old Carl Fredricksen travels to Paradise Falls in his house equipped with balloons, inadvertently taking
-        a young stowaway.</p>
-    <h3>Why I like UP?</h3>
-    <p>It's an emotionally intense story about life, love, commitment, hope, happiness, loss and sadness.</p>
-    <h3>Quote-</h3>
-    <p>“Squirrel!” — Dug</p>
-
-    <h2 id="valle_de_la_Luna">Favorite Place-Valle de la Luna</h2>
-    <h3>Description-</h3>
-    <p>Valle de la Luna, also calling Killa Qhichwa (Moon Valley) is situated about 10 kilometers from downtown La Paz,
-        in the Pedro Domingo Murillo Province, La Paz Department, Bolivia. It consists of an area where erosion has worn
-        away the majority of a mountain, composed primarily of clay rather than rock, leaving tall spires. It is similar
-        to another zone of La Paz that is known as El Valle de las Animas (The Valley of the Souls). It is an important
-        site of the famous holiday, Dias de los Muertos (Day of the Dead).</p>
-    <h3>Why I like Valle de la Luna?</h3>
-    <p>Its wild.The jagged hills look like they belong in a space movie </p>
-    <img class="home-pic"
-         src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/5d/11/7f/vale.jpg?w=1200&h=-1&s=1">
-    <a href="https://www.google.com/maps/place/Valle+de+la+Luna/@-16.5673643,-68.0939081,15z/data=!4m5!3m4!1s0x0:0xe5ce84af268e7da5!8m2!3d-16.5673643!4d-68.0939081?hl=en-GB"
-       target="_blank">Visit
-        Valle de la Luna in google map</a>
-
-    <h2 id="favorite_food">Favorite Food</h2>
-    <ul>
-        <li>Hummus</li>
-        <li>Ice cream</li>
-        <li>Chocolate</li>
-    </ul>
-</main>
+<footer>
+    <div>Neta Kleman <br><a href="mailto:netaly.kelman@grunitech.com">netaly.kelman@grunitech.com</a>
+    </div>
+</footer>
 </body>
 </html>
